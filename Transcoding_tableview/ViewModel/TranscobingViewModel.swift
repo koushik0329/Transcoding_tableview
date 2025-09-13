@@ -10,6 +10,7 @@ import Foundation
 class TranscobingViewModel {
     var transcodingData: [Transcobing] = []
     var networkManager = NetworkManager.shared
+    var headingData: String = ""
         
     func getDataFromServer(closure: @escaping (() -> Void)) {
         networkManager.getData(from: ServerURL.baseURL.rawValue) { [weak self] result in
@@ -22,6 +23,7 @@ class TranscobingViewModel {
                 }
             }
             self?.transcodingData = allTranscodings
+            self?.headingData = result?.first?.title ?? ""
             closure()
         }
     }
