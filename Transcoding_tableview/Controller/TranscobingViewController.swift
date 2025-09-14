@@ -18,6 +18,7 @@ class TranscobingViewController: UIViewController, UITableViewDelegate, UITableV
         viewModel.getDataFromServer { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+                self?.titleLabel.text = self!.viewModel.headingData
             }
 
         }
@@ -26,7 +27,6 @@ class TranscobingViewController: UIViewController, UITableViewDelegate, UITableV
     func setupUI() {
         titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        titleLabel.text = "Awesome"
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
