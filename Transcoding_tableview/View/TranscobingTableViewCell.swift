@@ -1,10 +1,3 @@
-//
-//  TranscobingTableViewCell.swift
-//  Transcoding_tableview
-//
-//  Created by Koushik Reddy Kambham on 9/12/25.
-//
-
 import UIKit
 
 class TranscobingTableViewCell: UITableViewCell {
